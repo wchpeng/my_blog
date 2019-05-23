@@ -1,0 +1,29 @@
+from my_blog.settings import *  # NOQA
+
+INTERNAL_IPS = ['127.0.0.1']
+INSTALLED_APPS.append('debug_toolbar')
+MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+# config cache to use redis
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://172.16.15.203:6379/11',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            # 'PASSWORD': 'my secret'
+            'COLLECTION_POOL_KWARGS': {'max_collections': 100}
+        }
+    }
+}
+
+# config session to use redis
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
