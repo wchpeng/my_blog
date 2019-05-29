@@ -1,8 +1,13 @@
 from my_blog.settings import *  # NOQA
 
 INTERNAL_IPS = ['127.0.0.1']
-INSTALLED_APPS.append('debug_toolbar')
-MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+INSTALLED_APPS += [
+    'debug_toolbar'
+]
+
+MIDDLEWARE += [
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
+]
 
 DATABASES = {
     'default': {
@@ -15,10 +20,13 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
+        # 'LOCATION': 'redis://127.0.0.1:6379/11',
         'LOCATION': 'redis://172.16.15.203:6379/11',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            # 'PASSWORD': 'my secret'
+            # 'PASSWORD': 'my secret',
+            'SOCKET_CONNECT_TIMEOUT': 5,
+            'SOCKET_TIMEOUT': 5,
             'COLLECTION_POOL_KWARGS': {'max_collections': 100}
         }
     }
