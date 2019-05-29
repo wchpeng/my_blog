@@ -35,3 +35,5 @@ CACHES = {
 # config session to use redis
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
+
+STATIC_ROOT = None
