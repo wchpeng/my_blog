@@ -37,3 +37,4 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
 
 STATIC_ROOT = None
+MEDIA_ROOT = MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
