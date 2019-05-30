@@ -6,6 +6,9 @@ import sys
 
 def main():
     env = os.environ.get("PY3_DJANGO2_SETTING_ENV", "develop")
+    print("-------------------------------")
+    print(env)
+    print("-------------------------------")
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_blog.%s' % env)
     try:
         from django.core.management import execute_from_command_line
