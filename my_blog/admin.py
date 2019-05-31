@@ -8,7 +8,7 @@ from django.forms.models import ModelChoiceField
 # 配置 admin.site 的一些自定义信息
 
 admin.site.site_title = "后台管理"
-admin.site.site_header = "乒乒乓乓博客管理"
+admin.site.site_header = "乒乒乓乓"
 admin.site.index_title = "博客管理系统"
 admin.site.site_url = "/"  # 配置网站主页
 admin.site._registry = OrderedDict()  # 把 _registry 变成 OrderedDict，后面作为注册对象的排序依据
