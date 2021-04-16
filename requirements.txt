@@ -1,6 +1,6 @@
 Django==2.1.7
 django-ckeditor==5.7.1
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 django-js-asset==1.2.2
 django-mdeditor==0.1.14
 django-redis==4.10.0
